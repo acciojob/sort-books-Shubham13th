@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchBooks, setSortBy, setSortOrder } from "../features/books/booksSlice";
 import "../styles/App.css";
-import "regenerator-runtime/runtime"; 
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,24 +33,27 @@ const App = () => {
       <h1>Books List</h1>
 
       {/* FIRST DROPDOWN - Sort By */}
-      <select
-        value={sortBy}
-        onChange={(e) => dispatch(setSortBy(e.target.value))}
-      >
-        <option value="title">Title</option>
-        <option value="author">Author</option>
-        <option value="publisher">Publisher</option>
-      </select>
-
+      <label>Sort By
+        <select
+          value={sortBy}
+          onChange={(e) => dispatch(setSortBy(e.target.value))}
+        >
+          <option value="title">Title</option>
+          <option value="author">Author</option>
+          <option value="publisher">Publisher</option>
+        </select>
+      </label>
       {/* SECOND DROPDOWN - Order */}
-      <select
-        value={sortOrder}
-        onChange={(e) => dispatch(setSortOrder(e.target.value))}
-      >
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
 
+      <label>Order
+        <select
+          value={sortOrder}
+          onChange={(e) => dispatch(setSortOrder(e.target.value))}
+        >
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </label>
       <table border="1">
         <thead>
           <tr>
