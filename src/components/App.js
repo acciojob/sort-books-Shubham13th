@@ -30,10 +30,33 @@ const App = () => {
   return (
     <div>
 
+      <div>
+      <label>Sort by:</label>
+      <select
+        value={sortBy}
+        onChange={(e) => dispatch(setSortBy(e.target.value))}
+      >
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+        <option value="publisher">Publisher</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Order:</label>
+      <select
+        value={sortOrder}
+        onChange={(e) => dispatch(setSortOrder(e.target.value))}
+      >
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </div>
+
       <h1>Books List</h1>
 
       {/* FIRST DROPDOWN - Sort By */}
-      <label>Sort by:
+      {/* <label>Sort by:
         <select
           value={sortBy}
           onChange={(e) => dispatch(setSortBy(e.target.value))}
@@ -42,10 +65,10 @@ const App = () => {
           <option value="author">Author</option>
           <option value="publisher">Publisher</option>
         </select>
-      </label>
+      </label> */}
       {/* SECOND DROPDOWN - Order */}
 
-      <label>Order:
+      {/* <label>Order:
         <select
           value={sortOrder}
           onChange={(e) => dispatch(setSortOrder(e.target.value))}
@@ -53,7 +76,9 @@ const App = () => {
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-      </label>
+      </label> */}
+
+      
       <table border="1">
         <thead>
           <tr>
